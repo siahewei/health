@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="app_bg">#ffffff</color>
+    <color name="list_gray_bg">#eeeeee</color>
+    <color name="app_main">#e94b4a</color>
+    <color name="white">#ffffff</color>
+    <color name="text_black">#000000</color>
+    <color name="black">#000000</color>
+    <color name="text_light_black">#959595</color>
+    <color name="lightback">#535353</color>
+    <color name="blue">#0db8d4</color>
+    <color name="gray0">#f7f7f7</color>
+    <color name="gray1">#e8e8e8</color>
+    <color name="gray2">#dcdcdc</color>
+    <color name="gray3">#999999</color>
+    <color name="gray4">#666666</color>
+    <color name="gray5">#333333</color>
+    <color name="gray6c">#cccccc</color>
+    <color name="orange">#eb9e71</color>
+    <color name="orange_dark">#eb9e6f</color>
+    <color name="yellow">#fccb56</color>
+    <color name="app_listview_item_press">#f0f0f0</color>
+    <color name="full_transparent">#00000000</color>
+    <color name="red_btn_press">#bc0000</color>
+    <color name="transparent_black">#b0222222</color>
+    <color name="comment_blue">#587dbb</color>
+    <color name="register_agreement">#FF1F78D2</color>
+    <color name="dynamic_replay_bg">#fafafa</color>
+    <color name="im_color">#f0f0f0</color>
+</resources>

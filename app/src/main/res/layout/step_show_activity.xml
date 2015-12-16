@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.healthcare.common.widget.CircleBar
+        android:id="@+id/progress_step"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="300dp" />
+
+    <LinearLayout
+        android:layout_below="@+id/progress_step"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:gravity="bottom"
+        android:layout_width="match_parent">
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btn_show_locus"
+            android:layout_width="0dp"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+
+            android:text="查看轨迹"/>
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btn_switch"
+            android:padding="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="打开log"/>
+
+        <Button
+            android:id="@+id/btn_export"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_width="0dp"
+            android:text="导出数据"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

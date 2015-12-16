@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/cst_dialog_bg">
+
+        <TextView
+            android:id="@+id/cst_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:padding="20dp"
+            android:textColor="#666666"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/cst_dialog_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cst_dialog_title"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:hint="common"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/cst_dialog_horizontal_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/cst_dialog_content_view"
+            android:background="#dcdcdc" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cst_dialog_horizontal_divider"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cst_dialog_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cst_dialog_left_bg"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="取消"
+                android:textColor="@drawable/tv_blue_white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/cst_dialog_vertical_divider"
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/cst_dialog_title"
+                android:background="#dcdcdc" />
+
+            <TextView
+                android:id="@+id/cst_dialog_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cst_dialog_left_bg"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="删除"
+                android:textColor="@drawable/tv_blue_white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/cst_dialog_vertical_divider0"
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/cst_dialog_title"
+                android:background="#dcdcdc" />
+
+            <TextView
+                android:id="@+id/cst_dialog_sure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cst_dialog_right_bg"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="导出"
+                android:textColor="@drawable/tv_blue_white"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
