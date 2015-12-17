@@ -1,10 +1,10 @@
 package com.healthcare.modules.service.predometer;
 
-import java.util.ArrayList;
-
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+
+import java.util.ArrayList;
 
 /**
  * Step detector base class. Can be used as a dummy step detector. Doesn't
@@ -46,7 +46,7 @@ public class StepDetector implements SensorEventListener, IStepDetector {
         public static StepDetector stepDetectorFactory(String detectorName) {
 
                 if (detectorName.equals("moving_average")) {
-                        return new MovingAverageStepDetector();
+                        return new LimitStepDetector();
                 } else if (detectorName.equals("null")) {
                         return new StepDetector();
                 }

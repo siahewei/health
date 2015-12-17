@@ -32,7 +32,7 @@
             android:name="com.amap.api.v2.apikey"
             android:value="72f1d4081a45e6b20539683936132939" />
 
-        <activity android:name=".modules.map.StepShowActivity">
+        <activity android:name=".modules.map.GFitActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -47,6 +47,10 @@
             android:process=":myprocess"
             android:enabled="true"/>
         <service android:name=".modules.service.SensorRecodingService"/>
+        <service
+            android:name=".modules.service.GoogleFitService"
+            android:enabled="true" >
+        </service>
 
     </application>
 
