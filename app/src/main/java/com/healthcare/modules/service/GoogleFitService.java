@@ -17,6 +17,9 @@ import com.google.android.gms.fitness.data.DataType;
 import com.google.android.gms.fitness.data.Field;
 import com.google.android.gms.fitness.request.DataReadRequest;
 import com.google.android.gms.fitness.result.DataReadResult;
+import com.healthcare.common.Constants;
+import com.healthcare.modules.modle.DataQueue;
+import com.healthcare.modules.modle.stepbean;
 import com.socks.library.KLog;
 
 import java.util.Calendar;
@@ -43,6 +46,9 @@ public class GoogleFitService extends IntentService {
     public static final String FIT_EXTRA_CONNECTION_MESSAGE = "fitFirstConnection";
     public static final String FIT_EXTRA_NOTIFY_FAILED_STATUS_CODE = "fitExtraFailedStatusCode";
     public static final String FIT_EXTRA_NOTIFY_FAILED_INTENT = "fitExtraFailedIntent";
+
+
+    private DataQueue<stepbean> dataQueueBuffer;
 
     @Override
     public void onDestroy() {
@@ -101,10 +107,17 @@ public class GoogleFitService extends IntentService {
     }
 
     private void getStepsToday() {
+
+        if (dataQueueBuffer == null){
+            dataQueueBuffer = new DataQueue<stepbean>(Constants.stepbeanDao, 10);
+        }
+
         Calendar cal = Calendar.getInstance();
         Date now = new Date();
         cal.setTime(now);
         long endTime = cal.getTimeInMillis();
+        cal.set(Calendar.MONTH, 11);
+        cal.set(Calendar.DAY_OF_MONTH, 0);
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
@@ -134,11 +147,12 @@ public class GoogleFitService extends IntentService {
                 totalSteps += steps;
             }
 
-            long st = dp.getStartTime(TimeUnit.MICROSECONDS);
-            long end = dp.getEndTime(TimeUnit.MICROSECONDS);
-
+            long st = dp.getStartTime(TimeUnit.NANOSECONDS);
+            long end = dp.getEndTime(TimeUnit.NANOSECONDS);
             KLog.d("data", "from time:" + st + ",endtime:" + end + ",num:" + sumtemp);
 
+            //day, Long bengin, Long end, Integer stepcount, Integer source
+            dataQueueBuffer.add(new stepbean(null, st, end, steps, Constants.DATA_SOURCE_GFIT));
         }
 
         publishTodaysStepData(totalSteps);
@@ -146,9 +160,7 @@ public class GoogleFitService extends IntentService {
 
     private void publishTodaysStepData(int totalSteps) {
         Intent intent = new Intent(HISTORY_INTENT);
-        // You can also include some extra data.
         intent.putExtra(HISTORY_EXTRA_STEPS_TODAY, totalSteps);
-
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 

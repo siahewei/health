@@ -5,6 +5,7 @@ import com.healthcare.common.utils.TaskExcuteUtil;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * project     healthcare
@@ -65,7 +66,6 @@ public class StepsInfoQueue {
 
     public String getDay(long timeStamp) {
         DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        return  sdf.format(timeStamp);
+        return  sdf.format(new Date(timeStamp / 1000000));
     }
-
 }

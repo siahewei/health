@@ -19,6 +19,7 @@ public class Constants {
     public static final int SAMPLING_RATE = 3000;
     public static final int DB_VERSION = 1;
     public static final String DB_NAME = "trails";
+    public static int DATA_SOURCE_GFIT = 10003; // google fit
 
     public static boolean isRecording = false;
 
@@ -35,8 +36,6 @@ public class Constants {
     public static boolean isAlgorithmRecordingStep = false;
 
     public static String TAG;
-
-
 
 
 }

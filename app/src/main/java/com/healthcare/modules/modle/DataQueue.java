@@ -27,6 +27,13 @@ public class DataQueue <T>{
         dataList = new ArrayList<T>();
     }
 
+    public void clear(){
+        if (dataList != null){
+            dataList.clear();
+        }
+        dataList = null;
+    }
+
     public void add(final T data){
         if (data != null){
             dataList.add(data);
@@ -48,6 +55,5 @@ public class DataQueue <T>{
             dataList.clear();
         }
     }
-
 
 }
